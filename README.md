@@ -1,4 +1,5 @@
-#Installing Tensorflow on Prince
+#Installing Tensorflow on Prince   
+
 
 ## Using Tunnel   (Outside NYU)  
 ```
@@ -15,10 +16,12 @@ sshfs -p 22 pp1953@prince.hpc.nyu.edu:/scratch/pp1953 ~/project
 srun -c4 -t24:00:00 --mem=30000 --gres=gpu:p40:1 --pty /bin/bash
 ```
 
+
 ##Remove any preloaded modules  
 ```
 module purge
 ```
+
 
 ##delete any conda environment   
 (if something goes wrong) 
