@@ -35,11 +35,14 @@ conda remove --name env_name --all
 ```
 
 ## Load  Cuda/Cudd modules  (strictly follow the order)
-```
+
 *(tensorflow==1.7.0)*  
+```
 module load cudnn/9.0v7.0.5  
 module load cuda/9.0.176   
+```
 *(tensorflow==1.11.0)*
+```
 module load cudnn/9.0v7.3.0.29 
 module load cuda/9.0.176
 ```
