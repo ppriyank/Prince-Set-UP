@@ -1,4 +1,4 @@
-#Installing Tensorflow on Prince   
+# Installing Tensorflow on Prince   
 
 
 ## Using Tunnel   (Outside NYU)  
@@ -17,19 +17,36 @@ srun -c4 -t24:00:00 --mem=30000 --gres=gpu:p40:1 --pty /bin/bash
 ```
 
 
-##Remove any preloaded modules  
+## Remove any preloaded modules  
 ```
 module purge
 ```
 
-
-##delete any conda environment   
+## delete any conda environment   
 (if something goes wrong) 
 Clean the  environment :  
 ```
 conda clean -i -l -t -p -s   
 ```
-Conda seems to bea bug, doesn't  delete the local files, will eventually  exhaust all the files 
+Conda seems to bea bug, doesn't  delete the local files, will eventually  exhaust all the storage space
 ```
-conda remove --name vision --all
+conda remove --name env_name --all
 ```
+## Load  Cuda/Cudd modules  (strictly follow the order)
+*(tensorflow==1.7.0)*  
+module load cudnn/9.0v7.0.5  
+module load cuda/9.0.176   
+*(tensorflow==1.11.0)*
+module load cudnn/9.0v7.3.0.29 
+module load cuda/9.0.176
+
+
+## Install  libraries (Use pip not conda!!)
+Conda has some sort of bug. It installs cuda and cudnn as well, which is already installed on prince and in contradictions to the requirements of tensorflow.
+
+```
+pip install h5py nltk pyhocon scipy sklearn
+pip install tensorflow-gpu==1.7.0
+```
+
+
