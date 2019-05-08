@@ -54,7 +54,7 @@ conda activate bert
 
 
 ## Install  libraries (Use pip not conda!!)
-Conda has some sort of bug. It installs cuda and cudnn as well, which is already installed on prince and in contradictions to the requirements of tensorflow.
+Conda has some sorts of bug. It installs cuda and cudnn as well, which is already installed on prince and in contradictions to the requirements of tensorflow.
 ```
 pip install h5py nltk pyhocon scipy sklearn
 pip install tensorflow-gpu==1.7.0  
@@ -90,6 +90,7 @@ req.yml :
 
 * Conda install reverts the changes of loading cuda/cudnn  
 use : ```conda uninstall tensorflow-gpu cudatoolkit cudnn ```
-* Tensorflow was compiled with diffent version of  cudnn  and currently is a different version is loaded 
+* Tensorflow was compiled with diffent version of  cudnn  and currently is a different version is loaded. Just load the correct/earlier version of cudnn by which *tensorflow-gpu* was  installed
+* Tensorflow is cuda/cudnn installed in not compatiblet to use gpu.  ```pip uninstall tensorflow-gpu``` or  possibly delete the  whole  environment and follow the  above procedure.
 
 
