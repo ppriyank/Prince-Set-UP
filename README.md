@@ -64,4 +64,31 @@ or
 pip install tensorflow-gpu==1.11.0
 ```
 
+## Installing Pytorch 
+```
+conda  env create -f req.yml 
+```
+
+req.yml : 
+```
+ name: env_name
+ channels:
+     - pytorch
+ dependencies:
+     - python=3.6
+     - pytorch=1.0.0
+     - torchvision=0.2.1
+     - numpy=1.14.5
+     - scikit-learn=0.19.1
+     - h5py
+     - scipy
+     - pip:
+         - tensorboard
+```
+
+## Common problems
+
+* Conda install reverts the changes of loading cuda/cudnn  
+use : ```conda uninstall tensorflow-gpu cudatoolkit cudnn ```
+* 
 
