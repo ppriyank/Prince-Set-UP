@@ -90,5 +90,6 @@ req.yml :
 
 * Conda install reverts the changes of loading cuda/cudnn  
 use : ```conda uninstall tensorflow-gpu cudatoolkit cudnn ```
-* 
+* Tensorflow was compiled with diffent version of  cudnn  and currently is a different version is loaded 
+
 
