@@ -29,7 +29,7 @@ Clean the  environment :
 conda deactivtae 
 conda clean -i -l -t -p -s   
 ```
-Conda seems to bea bug, doesn't  delete the local files, will eventually  exhaust all the storage space
+Conda seems to have a bug, doesn't  delete the local files, will eventually  exhaust all the storage space
 ```
 conda remove --name env_name --all
 ```
