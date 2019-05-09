@@ -2,6 +2,7 @@
 Try to follow the sequence of  commands as it is.  Do  not do module load anaconda, doesn't seems to  work for me. 
 
 ## Using Tunnel   (Outside NYU)  
+ssh into gw.hpc.nyu.edu first, or use cisco vpn (allows file  transfer)
 ```
 ssh pp1953@gw.hpc.nyu.edu 
 ```
