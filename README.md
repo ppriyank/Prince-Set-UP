@@ -97,7 +97,7 @@ use : ```conda uninstall tensorflow-gpu cudatoolkit cudnn ```
 
 ## Summary
 ```
-srun -c4 -t100:00:00 --mem=30000 --gres=gpu:p40:1 --pty /bin/bash
+srun -c4 -t100:00:00 --mem=50000 --gres=gpu:p40:1 --pty /bin/bash
 cd /scratch/model2/codes/
 module load cudnn/9.0v7.3.0.29 
 module load cuda/9.0.176
