@@ -98,7 +98,7 @@ use : ```conda uninstall tensorflow-gpu cudatoolkit cudnn ```
 ## Summary
 ```
 sshfs -p 22 pp1953@prince.hpc.nyu.edu:/scratch/pp1953 ~/NYU/project
-ssh pp1953@nyu.edu
+ssh pp1953@prince.hpc.nyu.edu
 tmux a -t pathak
 srun -c4 -t100:00:00 --mem=50000 --gres=gpu:p40:1 --pty /bin/bash
 cd /scratch/pp1953/model2/codes/
