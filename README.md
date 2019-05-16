@@ -27,7 +27,7 @@ module purge
 (if something goes wrong, start fresh) 
 Clean the  environment :  
 ```
-conda deactivtae 
+conda deactivate 
 conda clean -i -l -t -p -s   
 ```
 Conda seems to have a bug, doesn't  delete the local files, will eventually  exhaust all the storage space
