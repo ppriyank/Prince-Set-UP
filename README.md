@@ -23,6 +23,11 @@ srun -c4 -t24:00:00 --mem=30000 --gres=gpu:p40:1 --pty /bin/bash
 module purge
 ```
 
+## What virtual environment you have
+```
+conda info --envs
+```
+
 ## Delete a conda environment   
 (if something goes wrong, start fresh) 
 Clean the  environment :  
