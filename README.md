@@ -103,7 +103,7 @@ jupyter contrib nbextension install --user
 jupyter notebook --generate-config
 ```
 
-edit the following to : 
+edit the following to (uncomment as well remove \# ): 
 ```
 c.NotebookApp.ip = '0.0.0.0'
 c.NotebookApp.allow_origin = '*'
