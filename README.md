@@ -92,6 +92,23 @@ req.yml :
          - tensorboard
 ```
 
+## Creating a jupyter notebook on server
+```
+pip install jupyter
+pip install jupyter[notebook]
+pip install matplotlib
+pip install jupyter_contrib_nbextensions
+jupyter contrib nbextension install --user
+
+jupyter notebook --generate-config
+```
+
+edit the following to : 
+```
+c.NotebookApp.ip = '0.0.0.0'
+c.NotebookApp.allow_origin = '*'
+```
+
 ## Common problems
 
 * Conda install reverts the changes of loading cuda/cudnn  
