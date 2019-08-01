@@ -109,12 +109,18 @@ c.NotebookApp.ip = '0.0.0.0'
 c.NotebookApp.allow_origin = '*'
 ```
 
+## Please use tmux (use mouse scrolling)
+```
+setw -g mouse on
+```
+
 ## Common problems
 
 * Conda install reverts the changes of loading cuda/cudnn  
 use : ```conda uninstall tensorflow-gpu cudatoolkit cudnn ```
 * Tensorflow was compiled with diffent version of  cudnn  and currently is a different version is loaded. Just load the correct/earlier version of cudnn by which *tensorflow-gpu* was  installed
 * Tensorflow is not compatible to use gpu. cuda/cudnn used during installation doesn't match with the tensorflow binary from which it was created.  ```pip uninstall tensorflow-gpu``` or  possibly delete the  whole  environment and follow the  above procedure.
+
 
 
 ## Summary
