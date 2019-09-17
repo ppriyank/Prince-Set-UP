@@ -13,17 +13,6 @@ ssh pp1953@gw.hpc.nyu.edu
 sshfs -p 22 pp1953@prince.hpc.nyu.edu:/scratch/pp1953 ~/project
 ```
 
-## Requesting GPUs (not recommended):   
-Types of GPUs available can be found here : https://wikis.nyu.edu/display/NYUHPC/Clusters+-+Prince
-```
-srun -c4 -t5:00:00 --mem=30000 --gres=gpu:p40:1 --pty /bin/bash
-```
-
-## Remove any preloaded modules  
-```
-module purge
-```
-
 ## What virtual environment you have
 ```
 conda info --envs
@@ -41,18 +30,6 @@ Conda seems to have a bug, doesn't  delete the local files, will eventually  exh
 conda remove --name env_name --all
 ```
 
-## Load  Cuda/Cudd modules  (strictly follow the order)
-
-*(tensorflow==1.7.0)*  
-```
-module load cudnn/9.0v7.0.5  
-module load cuda/9.0.176   
-```
-*(tensorflow==1.11.0)*
-```
-module load cudnn/9.0v7.3.0.29 
-module load cuda/9.0.176
-```
 ## Create environment  
 ```
 conda create --name bert python=3.5  
@@ -93,6 +70,59 @@ req.yml :
          - tensorboard
 ```
 
+## Submitting Jobs (Recommended)
+Create a file `file_name.s` like  
+```
+#!/bin/bash
+
+#SBATCH --job-name=lab2-sgd
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=10GB
+#SBATCH --gres=gpu
+#SBATCH --time=01:00:00
+#SBATCH --output=out.%j
+
+module purge
+module load cudnn/9.0v7.0.5  
+module load cuda/9.0.176   
+
+
+conda activate env_name
+python lab2.py >> gpu-sgd.out
+```
+Run the above script as 
+
+```sbatch file_name.s```
+
+
+
+## Requesting GPUs (not recommended):   
+Types of GPUs available can be found here : https://wikis.nyu.edu/display/NYUHPC/Clusters+-+Prince
+```
+srun -c4 -t5:00:00 --mem=30000 --gres=gpu:p40:1 --pty /bin/bash
+```
+
+## Remove any preloaded modules  
+```
+module purge
+```
+
+## Load  Cuda/Cudd modules  (strictly follow the order)
+
+*(tensorflow==1.7.0)*  
+```
+module load cudnn/9.0v7.0.5  
+module load cuda/9.0.176   
+```
+*(tensorflow==1.11.0)*
+```
+module load cudnn/9.0v7.3.0.29 
+module load cuda/9.0.176
+```
+
+
 ## Creating a jupyter notebook on server
 ```
 pip install jupyter
@@ -121,6 +151,7 @@ setw -g mouse on
 use : ```conda uninstall tensorflow-gpu cudatoolkit cudnn ```
 * Tensorflow was compiled with diffent version of  cudnn  and currently is a different version is loaded. Just load the correct/earlier version of cudnn by which *tensorflow-gpu* was  installed
 * Tensorflow is not compatible to use gpu. cuda/cudnn used during installation doesn't match with the tensorflow binary from which it was created.  ```pip uninstall tensorflow-gpu``` or  possibly delete the  whole  environment and follow the  above procedure.
+
 
 
 
