@@ -13,7 +13,7 @@ ssh pp1953@gw.hpc.nyu.edu
 sshfs -p 22 pp1953@prince.hpc.nyu.edu:/scratch/pp1953 ~/project
 ```
 
-## Requesting GPUs :   
+## Requesting GPUs (not recommended):   
 Types of GPUs available can be found here : https://wikis.nyu.edu/display/NYUHPC/Clusters+-+Prince
 ```
 srun -c4 -t5:00:00 --mem=30000 --gres=gpu:p40:1 --pty /bin/bash
