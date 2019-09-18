@@ -140,10 +140,12 @@ c.NotebookApp.ip = '0.0.0.0'
 c.NotebookApp.allow_origin = '*'
 ```
 
-## Please use tmux (use mouse scrolling)
+## Using tmux (use mouse scrolling)
 ```
-setw -g mouse on
+tmux new -s session_name
+tmux a -t session_name
 ```
+`setw -g mouse on ` or `setw -g mode-mouse on` 
 
 ## Common problems
 
