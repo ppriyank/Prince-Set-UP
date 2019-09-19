@@ -158,7 +158,6 @@ pip install allennlp
 ```
 
 ### Don't load python module!!!
-chose your desired python from spider list 
 
 ## Common problems
 
