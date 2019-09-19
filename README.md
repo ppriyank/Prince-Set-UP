@@ -157,6 +157,7 @@ conda install -c conda-forge regex
 pip install allennlp
 ```
 
+`pip install` <--> `conda install -c conda-forge` 
 ### Don't load python module!!!
 
 ## Common problems
