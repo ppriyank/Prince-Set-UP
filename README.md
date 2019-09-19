@@ -147,6 +147,18 @@ tmux a -t session_name
 ```
 `setw -g mouse on ` or `setw -g mode-mouse on` 
 
+## Working with Jiant (allenNLP)
+
+```
+conda install -c conda-forge jsonnet 
+module spider gcc 
+module load gcc/9.1.0
+module load pyltp/python3.6/0.2.1
+pip install python-dev   
+```
+
+chose your desired python from spider list 
+
 ## Common problems
 
 * Conda install reverts the changes of loading cuda/cudnn  
