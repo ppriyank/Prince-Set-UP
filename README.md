@@ -153,10 +153,11 @@ Set mouse scrolling on by : (Mac control + b -> shift + : ->`setw -g mouse on ` 
 conda install -c conda-forge jsonnet 
 module spider gcc 
 module load gcc/9.1.0
-module load pyltp/python3.6/0.2.1
-pip install python-dev   
+conda install -c conda-forge regex
+pip install allennlp
 ```
 
+### Don't load python module!!!
 chose your desired python from spider list 
 
 ## Common problems
