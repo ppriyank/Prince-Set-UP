@@ -143,9 +143,11 @@ c.NotebookApp.allow_origin = '*'
 ```
 
 ## Using tmux (use mouse scrolling)
+For god's sake use tmux
 ```
 tmux new -s session_name
 tmux a -t session_name
+control + b -> # (sliding between windows) or control + b -> ' -> # (window >10) 
 ```
 Set mouse scrolling on by : (Mac control + b -> shift + : ->`setw -g mouse on ` or `setw -g mode-mouse on` )
 
