@@ -145,7 +145,7 @@ c.NotebookApp.allow_origin = '*'
 tmux new -s session_name
 tmux a -t session_name
 ```
-`setw -g mouse on ` or `setw -g mode-mouse on` 
+Set mouse scrolling on by : (Mac control + b -> shift + : ->`setw -g mouse on ` or `setw -g mode-mouse on` )
 
 ## Working with Jiant (allenNLP)
 
