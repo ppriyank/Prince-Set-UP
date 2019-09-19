@@ -74,23 +74,25 @@ req.yml :
 Create a file `file_name.s` like  
 ```
 #!/bin/bash
-
-#SBATCH --job-name=lab2-sgd
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=1
+#SBATCH --gres=gpu:1
+#SBATCH --time=5:00:00
 #SBATCH --mem=10GB
-#SBATCH --gres=gpu
-#SBATCH --time=01:00:00
-#SBATCH --output=out.%j
+#SBATCH --job-name=GPUDemo
+#SBATCH --mail-type=END
+#SBATCH --mail-user=pp1953p@nyu.edu
+#SBATCH --output=slurm_%j.out
+
 
 module purge
 module load cudnn/9.0v7.0.5  
 module load cuda/9.0.176   
 
-
-conda activate env_name
-python lab2.py >> gpu-sgd.out
+conda activate pathak
+module load cuda/9.0.176
+cd /scratch/pp1953/codes/
+python train.py best >> gpu-sgd.out
 ```
 Run the above script as 
 
