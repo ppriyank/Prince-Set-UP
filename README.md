@@ -99,7 +99,9 @@ Run the above script as
 
 ```sbatch file_name.s```
 
-
+`squeue -u pp1953`
+`squeue -j 4654238`
+`scancel 4654238`
 
 ## Requesting GPUs (not recommended):   
 Types of GPUs available can be found here : https://wikis.nyu.edu/display/NYUHPC/Clusters+-+Prince
