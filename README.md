@@ -76,7 +76,7 @@ Create a file `file_name.s` like
 #!/bin/bash
 #SBATCH --cpus-per-task=4
 #SBATCH --nodes=1
-#SBATCH --gres=gpu:v100:1
+#SBATCH --gres=gpu:p40:1
 #SBATCH --time=00:5:00
 #SBATCH --mem=100000
 #SBATCH --job-name=pp1953
@@ -183,7 +183,6 @@ sshfs -p 22 pp1953@prince.hpc.nyu.edu:/scratch/pp1953 ~/NYU/project
 ssh pp1953@prince.hpc.nyu.edu
 tmux a -t pathak
 srun -c4 -t100:00:00 --mem=50000 --gres=gpu:p40:1 --pty /bin/bash
-srun -c4 -t100:00:00 --mem=100000 --gres=gpu:v100:1 --pty /bin/bash
 cd /scratch/pp1953/model2/codes/
 module load cudnn/9.0v7.3.0.29 
 module load cuda/9.0.176
