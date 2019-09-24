@@ -74,25 +74,26 @@ req.yml :
 Create a file `file_name.s` like  
 ```
 #!/bin/bash
+#SBATCH --cpus-per-task=4
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --gres=gpu:1
-#SBATCH --time=5:00:00
-#SBATCH --mem=10GB
-#SBATCH --job-name=GPUDemo
-#SBATCH --mail-type=END
+#SBATCH --gres=gpu:v100:1
+#SBATCH --time=00:5:00
+#SBATCH --mem=100000
+#SBATCH --job-name=pp1953
 #SBATCH --mail-user=pp1953p@nyu.edu
 #SBATCH --output=slurm_%j.out
 
 
-module purge
-module load cudnn/9.0v7.0.5  
-module load cuda/9.0.176   
+. ~/.bashrc
+module load anaconda3/5.3.1
 
-conda activate pathak
-module load cuda/9.0.176
-cd /scratch/pp1953/codes/
-python train.py best >> gpu-sgd.out
+conda activate PPUU
+conda install -n PPUU nb_conda_kernels
+# conda activate 
+
+cd 
+cd code/Video-Person-ReID-master/current
+python best_cl_centers.py --opt=3 >> gpu-sgd.out
 ```
 Run the above script as 
 
