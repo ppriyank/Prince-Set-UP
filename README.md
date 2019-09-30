@@ -72,13 +72,18 @@ req.yml :
 
 ## Submitting Jobs (Recommended)
 Create a file `file_name.s` like  
+time : `hts:mins:seconds`  
+gpu: type: always use p40   
+mem: 50000 == 5Gb (the max one can request is 10Gb, don't request this much, you don't need it :) )  
+nodes>1 not allowed (IDK)  
+
 ```
 #!/bin/bash
 #SBATCH --cpus-per-task=4
 #SBATCH --nodes=1
 #SBATCH --gres=gpu:p40:1
-#SBATCH --time=00:5:00
-#SBATCH --mem=100000
+#SBATCH --time=01:00:00
+#SBATCH --mem=50000
 #SBATCH --job-name=pp1953
 #SBATCH --mail-user=pp1953p@nyu.edu
 #SBATCH --output=slurm_%j.out
