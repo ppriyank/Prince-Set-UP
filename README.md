@@ -133,7 +133,7 @@ module load cuda/9.0.176
 ```
 
 
-## Creating a jupyter notebook on server
+## Creating a jupyter notebook on server (unverified)
 ```
 pip install jupyter
 pip install jupyter[notebook]
@@ -143,7 +143,7 @@ jupyter contrib nbextension install --user
 
 jupyter notebook --generate-config
 ```
-
+For normal servers : 
 edit the following to (uncomment as well remove \# ): 
 ```
 c.NotebookApp.ip = '0.0.0.0'
