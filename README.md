@@ -134,6 +134,62 @@ module load cudnn/9.0v7.3.0.29
 module load cuda/9.0.176
 ```
 
+## Creating a jupyter notebook on Prince 
+```
+conda install -n <conda env name> nb_conda_kernels
+python -m ipykernel install --user --name build_central --display-name <conda env name>
+```
+
+Now create a sbatch file like this
+```
+#!/bin/bash
+#SBATCH --cpus-per-task=8
+#SBATCH --nodes=1
+#SBATCH --time=100:00:00
+#SBATCH --gres=gpu:v100:1
+#SBATCH --mem=100000
+#SBATCH --job-name=pp1953
+#SBATCH --mail-user=pp1953p@nyu.edu
+#SBATCH --output=outputs/slurm_%j.out
+
+
+. ~/.bashrc
+module load anaconda3/5.3.1
+module load jupyter-kernels/py3.5
+
+conda activate PPUU
+conda install -n PPUU nb_conda_kernels
+
+port=$(shuf -i 10000-65500 -n 1)
+/usr/bin/ssh -N -f -R $port:localhost:$port log-0
+/usr/bin/ssh -N -f -R $port:localhost:$port log-1
+
+cat<<EOF
+
+Jupyter server is running on: $(hostname)
+Job starts at: $(date)
+
+Step 1 :
+ssh -L $port:localhost:$port $USER@prince.hpc.nyu.edu
+
+ssh -L $port:localhost:$port $USER@prince
+
+Step 2:
+
+
+the URL is something: http://localhost:${port}/?token=XXXXXXXX (see your token below)
+
+EOF
+
+unset XDG_RUNTIME_DIR
+if [ "$SLURM_JOBTMP" != "" ]; then
+    export XDG_RUNTIME_DIR=$SLURM_JOBTMP
+fi
+
+jupyter notebook --no-browser --port $port --notebook-dir=$(pwd)
+```
+
+
 
 ## Creating a jupyter notebook on server (unverified)
 ```
