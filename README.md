@@ -189,7 +189,7 @@ fi
 jupyter notebook --no-browser --port $port --notebook-dir=$(pwd)
 ```
 
-
+if there is, by any chance, `.ssh/config` file rights distorted : do `chmod 700 .ssh/config` 
 
 ## Creating a jupyter notebook on server (unverified)
 ```
