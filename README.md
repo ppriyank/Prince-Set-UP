@@ -13,6 +13,17 @@ ssh pp1953@gw.hpc.nyu.edu
 sshfs -p 22 pp1953@prince.hpc.nyu.edu:/scratch/pp1953 ~/project
 ```
 
+## Installing Conda
+Download `python 3.6` version of the Anaconda for `ubuntu` from here : https://www.anaconda.com/distribution/
+
+```
+wget <download link>
+unzip <downloaded file> / tar -xf <downloaded file>
+chmod +777 <downloaded file>
+./<downloaded file>.sh 
+```
+
+
 ## What virtual environment you have
 ```
 conda info --envs
