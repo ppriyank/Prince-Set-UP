@@ -202,6 +202,9 @@ jupyter notebook --no-browser --port $port --notebook-dir=$(pwd)
 
 if there is, by any chance, `.ssh/config` file rights distorted : do `chmod 700 .ssh/config` 
 
+## Pdb multiple Line code 
+`from IPython import embed; embed()`
+
 ## Creating a jupyter notebook on server (unverified)
 ```
 pip install jupyter
