@@ -103,8 +103,8 @@ nodes>1 not allowed (IDK)
 . ~/.bashrc
 module load anaconda3/5.3.1
 
-conda activate PPUU
-conda install -n PPUU nb_conda_kernels
+conda activate <conda env name>
+conda install -n <conda env name> nb_conda_kernels
 # conda activate 
 
 cd 
