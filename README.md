@@ -1,6 +1,30 @@
 # Installing Tensorflow on Prince   
 Try to follow the sequence of  commands as it is.  Do  not do module load anaconda, doesn't seems to  work for me. 
 
+## Setting up keys
+Local Computer:
+In `~/.ssh/config` Add the following
+
+```
+Host prince
+    HostName prince.hpc.nyu.edu
+    User net_id
+    PubKeyAuthentication yes
+    IdentityFile /Users/local_name/.ssh/id_rsa
+``` 
+The last `IdentityFile` is the private key to use 
+
+Server
+```
+chmod 700 /home/<net_id>/
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/*
+```
+
+Add public key to the `~/.ssh/authorized_keys`
+
+``ssh prince``
+
 ## Using Tunnel   (Outside NYU)  
 ssh into gw.hpc.nyu.edu first, or use cisco vpn (allows file  transfer)
 ```
