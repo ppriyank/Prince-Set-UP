@@ -277,7 +277,11 @@ use : ```conda uninstall tensorflow-gpu cudatoolkit cudnn ```
 * Tensorflow is not compatible to use gpu. cuda/cudnn used during installation doesn't match with the tensorflow binary from which it was created.  ```pip uninstall tensorflow-gpu``` or  possibly delete the  whole  environment and follow the  above procedure.
 
 
-
+## Mount Point Using Access Point
+`
+ssh -f pp1953@access.cims.nyu.edu -L 2222:cassio.cs.nyu.edu:22 -N
+sshfs -p 2222 pp1953@cassio.cs.nyu.ed:/home/pp1953/ ~/NYU/temp/
+`
 
 ## Summary
 ```
@@ -290,3 +294,4 @@ module load cudnn/9.0v7.3.0.29
 module load cuda/9.0.176
 conda activate bert
 ```
+
