@@ -280,7 +280,12 @@ use : ```conda uninstall tensorflow-gpu cudatoolkit cudnn ```
 ## Mount Point Using Access Point
 ```
 ssh -f pp1953@access.cims.nyu.edu -L 2222:cassio.cs.nyu.edu:22 -N
-sshfs -p 2222 pp1953@cassio.cs.nyu.ed:/home/pp1953/ ~/NYU/temp/
+sshfs -p 2222 pp1953@127.0.0.1:/home/pp1953/ ~/NYU/temp/
+```
+or 
+```
+ssh -f <user_name>@<tunnel server> -L 2222:<target server>:22 -N
+sshfs -p 2222 <user_name>@127.0.0.1:/desired/path/ local/path/
 ```
 
 Unmounting process remains the same
