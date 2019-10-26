@@ -123,7 +123,8 @@ nodes>1 not allowed (IDK)
 #SBATCH --mail-user=pp1953p@nyu.edu
 #SBATCH --output=slurm_%j.out
 
-
+OPT=$1 
+#command line argument
 . ~/.bashrc
 module load anaconda3/5.3.1
 
