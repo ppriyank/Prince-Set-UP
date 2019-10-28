@@ -276,8 +276,9 @@ sshfs -p 22 pp1953@prince.hpc.nyu.edu:/scratch/pp1953 ~/project
 
 ### Mount Point Using Access Point
 ```
+
 ssh -f pp1953@access.cims.nyu.edu -L 2222:cassio.cs.nyu.edu:22 -N
-sshfs -p 2222 pp1953@127.0.0.1:/home/pp1953/ ~/NYU/temp/
+sshfs -p 2222 pp1953@127.0.0.1:/misc/vlgscratch4/LakeGroup/pathak/Personre-id ~/NYU/temp/
 ```
 or 
 ```
