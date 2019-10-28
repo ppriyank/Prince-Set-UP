@@ -1,42 +1,6 @@
 # Installing Tensorflow on Prince   
 Try to follow the sequence of  commands as it is.  Do  not do module load anaconda, doesn't seems to  work for me. 
 
-## Setting up keys
-Local Computer:
-In `~/.ssh/config` Add the following
-
-```
-Host prince
-    HostName prince.hpc.nyu.edu
-    User net_id
-    PubKeyAuthentication yes
-    IdentityFile /Users/local_name/.ssh/id_rsa
-``` 
-The last `IdentityFile` is the private key to use 
-
-Server
-```
-chmod 700 /home/<net_id>/
-chmod 700 ~/.ssh
-chmod 600 ~/.ssh/*
-```
-
-Add public key to the `~/.ssh/authorized_keys`
-
-``ssh prince``
-
-## Using Tunnel   (Outside NYU)  
-ssh into gw.hpc.nyu.edu first, or use cisco vpn (allows file  transfer)
-```
-ssh pp1953@gw.hpc.nyu.edu 
-```
-
-## Linking up the prince storage to local
-*very helpful, if  you  are not a big  vim fan*
-```
-sshfs -p 22 pp1953@prince.hpc.nyu.edu:/scratch/pp1953 ~/project
-```
-
 ## Installing Conda
 Download `python 3.6` version of the Anaconda for `ubuntu` from here : https://www.anaconda.com/distribution/
 
@@ -227,9 +191,6 @@ jupyter notebook --no-browser --port $port --notebook-dir=$(pwd)
 
 if there is, by any chance, `.ssh/config` file rights distorted : do `chmod 700 .ssh/config` 
 
-## Pdb multiple Line code 
-`from IPython import embed; embed()`
-
 ## Creating a jupyter notebook on server (unverified)
 ```
 pip install jupyter
@@ -246,15 +207,6 @@ edit the following to (uncomment as well remove \# ):
 c.NotebookApp.ip = '0.0.0.0'
 c.NotebookApp.allow_origin = '*'
 ```
-
-## Using tmux (use mouse scrolling)
-For god's sake use tmux
-```
-tmux new -s session_name
-tmux a -t session_name
-control + b -> # (sliding between windows) or control + b -> ' -> # (window >10) 
-```
-Set mouse scrolling on by : (Mac control + b -> shift + : ->`setw -g mouse on ` or `setw -g mode-mouse on` )
 
 ## Working with Jiant (allenNLP)
 
@@ -276,6 +228,42 @@ use : ```conda uninstall tensorflow-gpu cudatoolkit cudnn ```
 * Tensorflow was compiled with diffent version of  cudnn  and currently is a different version is loaded. Just load the correct/earlier version of cudnn by which *tensorflow-gpu* was  installed
 * Tensorflow is not compatible to use gpu. cuda/cudnn used during installation doesn't match with the tensorflow binary from which it was created.  ```pip uninstall tensorflow-gpu``` or  possibly delete the  whole  environment and follow the  above procedure.
 
+# hacks
+## Setting up keys
+Local Computer:
+In `~/.ssh/config` Add the following
+
+```
+Host prince
+    HostName prince.hpc.nyu.edu
+    User net_id
+    PubKeyAuthentication yes
+    IdentityFile /Users/local_name/.ssh/id_rsa
+``` 
+The last `IdentityFile` is the private key to use 
+
+Server
+```
+chmod 700 /home/<net_id>/
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/*
+```
+
+Add public key to the `~/.ssh/authorized_keys`
+
+``ssh prince``
+
+## Using Tunnel   (Outside NYU)  
+ssh into gw.hpc.nyu.edu first, or use cisco vpn (allows file  transfer)
+```
+ssh pp1953@gw.hpc.nyu.edu 
+```
+
+## Linking up the prince storage to local
+*very helpful, if  you  are not a big  vim fan*
+```
+sshfs -p 22 pp1953@prince.hpc.nyu.edu:/scratch/pp1953 ~/project
+```
 
 ## Mount Point Using Access Point
 ```
@@ -292,7 +280,22 @@ Unmounting process remains the same
 
 `umount -f  ~/NYU/temp/`
 
-## Summary
+
+## Using tmux (use mouse scrolling)
+For god's sake use tmux
+```
+tmux new -s session_name
+tmux a -t session_name
+control + b -> # (sliding between windows) or control + b -> ' -> # (window >10) 
+```
+Set mouse scrolling on by : (Mac control + b -> shift + : ->`setw -g mouse on ` or `setw -g mode-mouse on` )
+
+## Pdb multiple Line code 
+`from IPython import embed; embed()`
+
+
+
+# Summary
 ```
 sshfs -p 22 pp1953@prince.hpc.nyu.edu:/scratch/pp1953 ~/NYU/project
 ssh pp1953@prince.hpc.nyu.edu
