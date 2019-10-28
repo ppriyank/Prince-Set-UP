@@ -1,7 +1,7 @@
 # Installing Tensorflow on Prince   
 Try to follow the sequence of  commands as it is.  Do  not do module load anaconda, doesn't seems to  work for me. 
 
-## Installing Conda
+### Installing Conda
 Download `python 3.6` version of the Anaconda for `ubuntu` from here : https://www.anaconda.com/distribution/
 
 ```
@@ -12,12 +12,12 @@ chmod +777 <downloaded file>
 ```
 
 
-## What virtual environment you have
+### What virtual environment you have
 ```
 conda info --envs
 ```
 
-## Delete a conda environment   
+### Delete a conda environment   
 (if something goes wrong, start fresh) 
 Clean the  environment :  
 ```
@@ -29,14 +29,14 @@ Conda seems to have a bug, doesn't  delete the local files, will eventually  exh
 conda remove --name env_name --all
 ```
 
-## Create environment  
+### Create environment  
 ```
 conda create --name bert python=3.5  
 conda activate bert
 ```
 
 
-## Install  libraries (Use pip not conda!!)
+### Install  libraries (Use pip not conda!!)
 Conda has some sorts of bug. It installs cuda and cudnn as well, which is already installed on prince and in contradictions to the requirements of tensorflow.
 ```
 pip install h5py nltk pyhocon scipy sklearn
@@ -47,7 +47,7 @@ or
 pip install tensorflow-gpu==1.11.0
 ```
 
-## Installing Pytorch 
+### Installing Pytorch 
 ```
 conda  env create -f req.yml 
 ```
@@ -69,7 +69,7 @@ req.yml :
          - tensorboard
 ```
 
-## Submitting Jobs (Recommended)
+### Submitting Jobs (Recommended)
 Create a file `file_name.s` like  
 time : `hts:mins:seconds`  
 gpu: type: always use p40   
@@ -110,18 +110,18 @@ Run the above script as
 Check job history :  
 `sacct --format=User,JobID,partition,state,time,start,end,elapsed,nodelist -j 4821655`  
 
-## Requesting GPUs (not recommended):   
+### Requesting GPUs (not recommended):   
 Types of GPUs available can be found here : https://wikis.nyu.edu/display/NYUHPC/Clusters+-+Prince
 ```
 srun -c4 -t5:00:00 --mem=30000 --gres=gpu:p40:1 --pty /bin/bash
 ```
 
-## Remove any preloaded modules  
+### Remove any preloaded modules  
 ```
 module purge
 ```
 
-## Load  Cuda/Cudd modules  (strictly follow the order)
+### Load  Cuda/Cudd modules  (strictly follow the order)
 
 *(tensorflow==1.7.0)*  
 ```
@@ -134,7 +134,7 @@ module load cudnn/9.0v7.3.0.29
 module load cuda/9.0.176
 ```
 
-## Creating a jupyter notebook on Prince 
+### Creating a jupyter notebook on Prince 
 ```
 conda install -n <conda env name> nb_conda_kernels
 python -m ipykernel install --user --name build_central --display-name <conda env name>
@@ -191,7 +191,7 @@ jupyter notebook --no-browser --port $port --notebook-dir=$(pwd)
 
 if there is, by any chance, `.ssh/config` file rights distorted : do `chmod 700 .ssh/config` 
 
-## Creating a jupyter notebook on server (unverified)
+### Creating a jupyter notebook on server (unverified)
 ```
 pip install jupyter
 pip install jupyter[notebook]
@@ -208,7 +208,7 @@ c.NotebookApp.ip = '0.0.0.0'
 c.NotebookApp.allow_origin = '*'
 ```
 
-## Working with Jiant (allenNLP)
+### Working with Jiant (allenNLP)
 
 ```
 conda install -c conda-forge jsonnet 
@@ -219,9 +219,9 @@ pip install allennlp
 ```
 
 `pip install` <--> `conda install -c conda-forge` 
-### Don't load python module!!!
+**Don't load python module!!!**
 
-## Common problems
+### Common problems
 
 * Conda install reverts the changes of loading cuda/cudnn  
 use : ```conda uninstall tensorflow-gpu cudatoolkit cudnn ```
@@ -229,7 +229,16 @@ use : ```conda uninstall tensorflow-gpu cudatoolkit cudnn ```
 * Tensorflow is not compatible to use gpu. cuda/cudnn used during installation doesn't match with the tensorflow binary from which it was created.  ```pip uninstall tensorflow-gpu``` or  possibly delete the  whole  environment and follow the  above procedure.
 
 # hacks
-## Setting up keys
+### Downloading Googe drive link
+(ref: https://stackoverflow.com/questions/25010369/wget-curl-large-file-from-google-drive)
+```
+pip install gdown
+gdown https://drive.google.com/uc?id=<id here>
+```
+
+
+
+### Setting up keys
 Local Computer:
 In `~/.ssh/config` Add the following
 
@@ -253,19 +262,19 @@ Add public key to the `~/.ssh/authorized_keys`
 
 ``ssh prince``
 
-## Using Tunnel   (Outside NYU)  
+### Using Tunnel   (Outside NYU)  
 ssh into gw.hpc.nyu.edu first, or use cisco vpn (allows file  transfer)
 ```
 ssh pp1953@gw.hpc.nyu.edu 
 ```
 
-## Linking up the prince storage to local
+### Linking up the prince storage to local
 *very helpful, if  you  are not a big  vim fan*
 ```
 sshfs -p 22 pp1953@prince.hpc.nyu.edu:/scratch/pp1953 ~/project
 ```
 
-## Mount Point Using Access Point
+### Mount Point Using Access Point
 ```
 ssh -f pp1953@access.cims.nyu.edu -L 2222:cassio.cs.nyu.edu:22 -N
 sshfs -p 2222 pp1953@127.0.0.1:/home/pp1953/ ~/NYU/temp/
@@ -281,7 +290,7 @@ Unmounting process remains the same
 `umount -f  ~/NYU/temp/`
 
 
-## Using tmux (use mouse scrolling)
+### Using tmux (use mouse scrolling)
 For god's sake use tmux
 ```
 tmux new -s session_name
@@ -290,7 +299,7 @@ control + b -> # (sliding between windows) or control + b -> ' -> # (window >10)
 ```
 Set mouse scrolling on by : (Mac control + b -> shift + : ->`setw -g mouse on ` or `setw -g mode-mouse on` )
 
-## Pdb multiple Line code 
+### Pdb multiple Line code 
 `from IPython import embed; embed()`
 
 
