@@ -17,14 +17,12 @@
 * **[hacks](#hacks)**<br>
   * [Downloading Googe drive link](#Downloading-Googe-drive-link)<br>  
   * [Setting Keys](#Setting-up-ssh-keys)<br> 
-  * [SSh Using Tunnel](#SSh-Using-Tunnel-Outside-NYU)<br> 
+  * [SSH Using Tunnel (Outside NYU)](#SSh-Using-Tunnel-Outside-NYU)<br> 
   * [Mount with Tunnel](#Mount-w-tunnel)<br>  
   * [Mount w/o Tunnel](#Mount-wo-tunnel)<br>  
   * [Using tmux](#Using-tmux)<br>    
   * [Pdb multiple Line code](#Pdb-multiple-Line-code)<br>  
 
-
-  
 
 * **[Summary](#Summary)**<br>
 
@@ -297,7 +295,7 @@ ssh into gw.hpc.nyu.edu first, or use cisco vpn (allows file  transfer)
 ssh pp1953@gw.hpc.nyu.edu 
 ```
 
-### Mounting w/o tunnel
+### Mount w/o tunnel
 *very helpful, if  you  are not a big  vim fan*
 ```
 sshfs -p 22 pp1953@prince.hpc.nyu.edu:/scratch/pp1953 ~/project
