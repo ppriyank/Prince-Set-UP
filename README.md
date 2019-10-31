@@ -17,9 +17,9 @@
 * **[hacks](#hacks)**<br>
   * [Downloading Googe drive link](#Downloading-Googe-drive-link)<br>  
   * [Setting Keys](#Setting-up-ssh-keys)<br> 
-  * [SSh Using Tunnel](#SSh-Using-Tunnel--Outside-NYU)<br> 
+  * [SSh Using Tunnel](#SSh-Using-Tunnel-Outside-NYU)<br> 
   * [Mount with Tunnel](#Mount-w-tunnel)<br>  
-  * [Mount w/o Tunnel](#Mount-wo-Tunnel)<br>  
+  * [Mount w/o Tunnel](#Mount-wo-tunnel)<br>  
   * [Using tmux](#Using-tmux)<br>    
   * [Pdb multiple Line code](#Pdb-multiple-Line-code)<br>  
 
