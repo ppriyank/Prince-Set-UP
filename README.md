@@ -5,19 +5,19 @@
   * [Create environment](#Create-environment)<br>  
   * [Install  libraries (Tensorflow)](#Install--libraries)<br>  
   * [Installing Pytorch](#Installing-Pytorch)<br>  
-  * [Submitting Jobs (Recommended)](#Submitting-Jobs-\(Recommended\)-)<br>  
+  * [Submitting Jobs (Recommended)](#Submitting-Jobs-Recommended-)<br>  
   * [Remove any preloaded modules](#Remove-any-preloaded-modules)<br>  
-  * [Requesting GPUs (not recommended):](#Requesting-GPUs-\(not-recommended\):)<br>  
-  * [Load  Cuda/Cudnn modules  (strictly follow the order)](#Load--Cuda/Cudnn-modules--(strictly-follow-the-order))<br>  
+  * [Requesting GPUs (not recommended):](#Requesting-GPUs-not-recommended:)<br>  
+  * [Load  Cuda/Cudnn modules  (strictly follow the order)](#Load--Cuda/Cudnn-modules--strictly-follow-the-order)<br>  
   * [Creating a jupyter notebook on Prince](#Creating-a-jupyter-notebook-on-Prince)<br>    
-  * [Creating a jupyter notebook on server (unverified)](#Creating-a-jupyter-notebook-on-server-(unverified))<br>  
+  * [Creating a jupyter notebook on server (unverified)](#Creating-a-jupyter-notebook-on-server-unverified)<br>  
   * [Working with Jiant (allenNLP)](#Working-with-Jiant-allenNLP)<br>    
   * [Common Problems](#Common-problems)<br>  
   
 * **[hacks](#hacks)**<br>
   * [Downloading Googe drive link](#Downloading-Googe-drive-link)<br>  
   * [Setting Keys](#Setting-up-keys)<br> 
-  * [SSh Using Tunnel](#Using-Tunnel-(Outside-NYU)-)<br> 
+  * [SSh Using Tunnel](#Using-Tunnel-Outside-NYU-)<br> 
   * [Mount (w) Tunnel](#Mount-Point-Using-Access-Point)<br>  
   * [Mount  (w/o) Tunnel](#Linking-up-the-prince-storage-to-local)<br>  
   * [Using tmux](#Using-tmux-(use-mouse-scrolling))<br>    
