@@ -1,7 +1,7 @@
 ### Table of Contents
 **[Installing Tensorflow on Prince](#Installing-Tensorflow-on-Prince)**<br>
-**[hacks](#hacks)**<br>
-**[Summary](#Summary)**<br>
+  **[hacks](#hacks)**<br>
+  **[Summary](#Summary)**<br>
 
 
 # Installing Tensorflow on Prince   
