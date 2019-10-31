@@ -1,5 +1,9 @@
 ### Table of Contents
 * **[Installing Tensorflow on Prince](#Installing-Tensorflow-on-Prince)**<br>
+  * [Installing Conda](#Installing-Conda)<br>
+  * [Delete a conda environment](#Delete-a-conda-environment)<br>
+  * [Create environment](#Create-environment)<br>  
+  * [Install  libraries (Use pip not conda!!)](#Install-libraries-(Use-pip-not-conda!!))<br>  
   * **[hacks](#hacks)**<br>
   * **[Summary](#Summary)**<br>
 
