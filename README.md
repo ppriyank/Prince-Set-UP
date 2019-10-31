@@ -1,3 +1,8 @@
+### Table of Contents
+**[Tensorflow Installation Instructions](#Installing Tensorflow on Prince)**<br>
+**[Usage Instructions](#usage-instructions)**<br>
+
+
 # Installing Tensorflow on Prince   
 Try to follow the sequence of  commands as it is.  Do  not do module load anaconda, doesn't seems to  work for me. 
 
