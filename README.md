@@ -14,7 +14,7 @@
   * [Working with Jiant (allenNLP)](#Working-with-Jiant-allenNLP)<br>    
   * [Common Problems](#Common-problems)<br>  
   
-* **[hacks](#Hacks)**<br>
+* **[Hacks](#Hacks)**<br>
   * [Downloading Googe drive link](#Downloading-Googe-drive-link)<br>  
   * [Setting Keys](#Setting-up-ssh-keys)<br> 
   * [SSH Using Tunnel (Outside NYU)](#SSH-Using-Tunnel-Outside-NYU)<br> 
