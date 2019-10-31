@@ -11,7 +11,7 @@
   * [Load  Cuda/Cudnn modules  (strictly follow the order)](#Load--Cuda/Cudnn-modules--(strictly-follow-the-order))<br>  
   * [Creating a jupyter notebook on Prince](#Creating-a-jupyter-notebook-on-Prince)<br>    
   * [Creating a jupyter notebook on server (unverified)](#Creating-a-jupyter-notebook-on-server-(unverified))<br>  
-  * [Working with Jiant (allenNLP)](#Working-with-Jiant-(allenNLP))<br>    
+  * [Working with Jiant (allenNLP)](#Working-with-Jiant-allenNLP)<br>    
   * [Common Problems](#Common-problems)<br>  
   
 * **[hacks](#hacks)**<br>
