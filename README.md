@@ -3,7 +3,7 @@
   * [Installing Conda](#Installing-Conda)<br>
   * [Delete a conda environment](#Delete-a-conda-environment)<br>
   * [Create environment](#Create-environment)<br>  
-  * [Install  libraries (Use pip not conda!!)](#Install-libraries-(Use-pip-not-conda!!))<br>  
+  * [Install  libraries (Tensorflow)](#Install--libraries)<br>  
   * **[hacks](#hacks)**<br>
   * **[Summary](#Summary)**<br>
 
@@ -46,7 +46,8 @@ conda activate bert
 ```
 
 
-### Install  libraries (Use pip not conda!!)
+### Install  libraries
+**(Use pip not conda!!)**
 Conda has some sorts of bug. It installs cuda and cudnn as well, which is already installed on prince and in contradictions to the requirements of tensorflow.
 ```
 pip install h5py nltk pyhocon scipy sklearn
