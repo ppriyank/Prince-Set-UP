@@ -7,17 +7,17 @@
   * [Installing Pytorch](#Installing-Pytorch)<br>  
   * [Submitting Jobs (Recommended)](#Submitting-Jobs-Recommended)<br>  
   * [Remove any preloaded modules](#Remove-any-preloaded-modules)<br>  
-  * [Requesting GPUs (not recommended):](#Requesting-GPUs-not-recommended)<br>  
+  * [Requesting GPUs (not recommended)](#Requesting-GPUs-not-recommended)<br>  
   * [Load  Cuda/Cudnn modules  (strictly follow the order)](#Load--CudaCudnn-modules--strictly-follow-the-order)<br>  
   * [Creating a jupyter notebook on Prince](#Creating-a-jupyter-notebook-on-Prince)<br>    
   * [Creating a jupyter notebook on server (unverified)](#Creating-a-jupyter-notebook-on-server-unverified)<br>  
   * [Working with Jiant (allenNLP)](#Working-with-Jiant-allenNLP)<br>    
   * [Common Problems](#Common-problems)<br>  
   
-* **[hacks](#hacks)**<br>
+* **[hacks](#Hacks)**<br>
   * [Downloading Googe drive link](#Downloading-Googe-drive-link)<br>  
   * [Setting Keys](#Setting-up-ssh-keys)<br> 
-  * [SSH Using Tunnel (Outside NYU)](#SSh-Using-Tunnel-Outside-NYU)<br> 
+  * [SSH Using Tunnel (Outside NYU)](#SSH-Using-Tunnel-Outside-NYU)<br> 
   * [Mount with Tunnel](#Mount-w-tunnel)<br>  
   * [Mount w/o Tunnel](#Mount-wo-tunnel)<br>  
   * [Using tmux](#Using-tmux)<br>    
@@ -258,7 +258,7 @@ use : ```conda uninstall tensorflow-gpu cudatoolkit cudnn ```
 * Tensorflow was compiled with diffent version of  cudnn  and currently is a different version is loaded. Just load the correct/earlier version of cudnn by which *tensorflow-gpu* was  installed
 * Tensorflow is not compatible to use gpu. cuda/cudnn used during installation doesn't match with the tensorflow binary from which it was created.  ```pip uninstall tensorflow-gpu``` or  possibly delete the  whole  environment and follow the  above procedure.
 
-# hacks
+# Hacks
 ### Downloading Googe drive link
 (ref: https://stackoverflow.com/questions/25010369/wget-curl-large-file-from-google-drive)
 ```
@@ -289,7 +289,7 @@ chmod 600 ~/.ssh/*
 Add public key to the `~/.ssh/authorized_keys`
 
 ``ssh prince``
-### SSh Using Tunnel (Outside NYU)  
+### SSH Using Tunnel (Outside NYU)  
 ssh into gw.hpc.nyu.edu first, or use cisco vpn (allows file  transfer)
 ```
 ssh pp1953@gw.hpc.nyu.edu 
