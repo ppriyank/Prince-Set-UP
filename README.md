@@ -1,5 +1,5 @@
 ### Table of Contents
-**[Installing Tensorflow on Prince](#Installing Tensorflow on Prince)**<br>
+**[Installing Tensorflow on Prince](#Installing-Tensorflow-on-Prince)**<br>
 **[Summary](#Summary)**<br>
 
 
