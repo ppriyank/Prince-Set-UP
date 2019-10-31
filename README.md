@@ -4,6 +4,9 @@
   * [Delete a conda environment](#Delete-a-conda-environment)<br>
   * [Create environment](#Create-environment)<br>  
   * [Install  libraries (Tensorflow)](#Install--libraries)<br>  
+  * [Installing Pytorch](#Installing-Pytorch)<br>  
+  * [Submitting Jobs (Recommended)](#Submitting-Jobs-(Recommended))<br>  
+  
   * **[hacks](#hacks)**<br>
   * **[Summary](#Summary)**<br>
 
