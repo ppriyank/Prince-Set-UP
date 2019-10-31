@@ -7,8 +7,14 @@
   * [Installing Pytorch](#Installing-Pytorch)<br>  
   * [Submitting Jobs (Recommended)](#Submitting-Jobs-Recommended-)<br>  
   
-  * **[hacks](#hacks)**<br>
-  * **[Summary](#Summary)**<br>
+* **[hacks](#hacks)**<br>
+  * [Pdb multiple Line code](#Pdb-multiple-Line-code)<br>  
+  * [Downloading Googe drive link](#Downloading-Googe-drive-link)<br>  
+  * [Using tmux](#Using-tmux-(use-mouse-scrolling))<br>  
+  * [Mount (w) Tunnel](#Mount-Point-Using-Access-Point)<br>  
+  * [Mount  (w/o) Tunnel](#Linking-up-the-prince-storage-to-local)<br>  
+  * [SSh Using Tunnel](#Using-Tunnel-(Outside-NYU)-)<br>  
+* **[Summary](#Summary)**<br>
 
 
 # Installing Tensorflow on Prince   
@@ -250,8 +256,6 @@ pip install gdown
 gdown https://drive.google.com/uc?id=<id here>
 ```
 
-
-
 ### Setting up keys
 Local Computer:
 In `~/.ssh/config` Add the following
@@ -275,7 +279,6 @@ chmod 600 ~/.ssh/*
 Add public key to the `~/.ssh/authorized_keys`
 
 ``ssh prince``
-
 ### Using Tunnel   (Outside NYU)  
 ssh into gw.hpc.nyu.edu first, or use cisco vpn (allows file  transfer)
 ```
@@ -287,8 +290,7 @@ ssh pp1953@gw.hpc.nyu.edu
 ```
 sshfs -p 22 pp1953@prince.hpc.nyu.edu:/scratch/pp1953 ~/project
 ```
-
-### Mount Point Using Access Point
+### Mount Point Using Access Point (Using tunnel)
 ```
 
 ssh -f pp1953@access.cims.nyu.edu -L 2222:cassio.cs.nyu.edu:22 -N
