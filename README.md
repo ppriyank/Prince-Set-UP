@@ -17,7 +17,7 @@
 * **[hacks](#hacks)**<br>
   * [Downloading Googe drive link](#Downloading-Googe-drive-link)<br>  
   * [Setting Keys](#Setting-up-keys)<br> 
-  * [SSh Using Tunnel](#Using-Tunnel-Outside-NYU-)<br> 
+  * [SSh Using Tunnel](#Using-Tunnel-Outside NYU)<br> 
   * [Mount (w) Tunnel](#Mount-Point-Using-Access-Point--Using-tunnel)<br>  
   * [Mount  (w/o) Tunnel](#Linking-up-the-prince-storage-to-local)<br>  
   * [Using tmux](#Using-tmux-use-mouse-scrolling)<br>    
@@ -289,7 +289,7 @@ chmod 600 ~/.ssh/*
 Add public key to the `~/.ssh/authorized_keys`
 
 ``ssh prince``
-### Using Tunnel   (Outside NYU)  
+### Using Tunnel (Outside NYU)  
 ssh into gw.hpc.nyu.edu first, or use cisco vpn (allows file  transfer)
 ```
 ssh pp1953@gw.hpc.nyu.edu 
