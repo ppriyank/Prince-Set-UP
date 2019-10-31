@@ -1,6 +1,6 @@
 ### Table of Contents
-**[Tensorflow Installation Instructions](#Installing Tensorflow on Prince)**<br>
-**[Usage Instructions](#usage-instructions)**<br>
+**[Installing Tensorflow on Prince](#Installing Tensorflow on Prince)**<br>
+**[Summary](#Summary)**<br>
 
 
 # Installing Tensorflow on Prince   
