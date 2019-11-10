@@ -21,7 +21,10 @@
   * [Mount with Tunnel](#Mount-w-tunnel)<br>  
   * [Mount w/o Tunnel](#Mount-wo-tunnel)<br>  
   * [Using tmux](#Using-tmux)<br>    
-  * [Pdb multiple Line code](#Pdb-multiple-Line-code)<br>  
+  * [Pdb multiple Line code](#Pdb-multiple-Line-code)<br>
+  * [Check job history](#Check-job-history)<br>  
+  * [Retrieve sbatch script for the running job id](#Retrieve-sbatch-script-for-the-running-job-id)<br>  
+
 
 
 * **[Summary](#Summary)**<br>
@@ -137,12 +140,6 @@ Run the above script as
 `squeue -u pp1953`  
 `squeue -j 4654238`  
 `scancel 4654238`  
-Check job history :  
-`sacct --format=User,JobID,partition,state,time,start,end,elapsed,nodelist -j 4821655`  
-
-Retrieve sbatch script for the running job ids :
-`scontrol write batch_script 5553599` or `scontrol write batch_script 5553599 -`
-
 
 ### Requesting GPUs (not recommended):   
 Types of GPUs available can be found here : https://wikis.nyu.edu/display/NYUHPC/Clusters+-+Prince
@@ -329,6 +326,14 @@ tmux a -t session_name
 control + b -> # (sliding between windows) or control + b -> ' -> # (window >10) 
 ```
 Set mouse scrolling on by : (Mac control + b -> shift + : ->`setw -g mouse on ` or `setw -g mode-mouse on` )
+
+### Check job history
+`sacct --format=User,JobID,partition,state,time,start,end,elapsed,nodelist -j 4821655`  
+
+### Retrieve sbatch script for the running job id
+`scontrol write batch_script 5553599` or `scontrol write batch_script 5553599 -`
+
+
 
 ### Pdb multiple Line code 
 `from IPython import embed; embed()`
