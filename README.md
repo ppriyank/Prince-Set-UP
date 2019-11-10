@@ -140,6 +140,10 @@ Run the above script as
 Check job history :  
 `sacct --format=User,JobID,partition,state,time,start,end,elapsed,nodelist -j 4821655`  
 
+Retrieve sbatch script for the running job ids :
+`scontrol write batch_script 5553599` or `scontrol write batch_script 5553599 -`
+
+
 ### Requesting GPUs (not recommended):   
 Types of GPUs available can be found here : https://wikis.nyu.edu/display/NYUHPC/Clusters+-+Prince
 ```
