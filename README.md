@@ -17,6 +17,7 @@
 * **[Hacks](#Hacks)**<br>
   * [Downloading Googe drive link](#Downloading-Googe-drive-link)<br>  
   * [Setting Keys](#Setting-up-ssh-keys)<br> 
+  * [Normal SSH](#Normal-SSH)<br> 
   * [SSH Using Tunnel (Outside NYU)](#SSH-Using-Tunnel-Outside-NYU)<br> 
   * [Mount with Tunnel](#Mount-w-tunnel)<br>  
   * [Mount w/o Tunnel](#Mount-wo-tunnel)<br>  
@@ -289,7 +290,14 @@ chmod 600 ~/.ssh/*
 
 Add public key to the `~/.ssh/authorized_keys`
 
-``ssh prince``
+### Normal SSH
+```
+ssh prince
+ssh pp1953@prince0.hpc.nyu.edu
+ssh pp1953@prince1.hpc.nyu.edu
+ssh pp1953@prince.hpc.nyu.edu
+```
+
 ### SSH Using Tunnel (Outside NYU)  
 ssh into gw.hpc.nyu.edu first, or use cisco vpn (allows file  transfer)
 ```
