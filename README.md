@@ -154,7 +154,12 @@ module load cuda/9.0.176
 module load cudnn/9.0v7.3.0.29 
 module load cuda/9.0.176
 ```
-
+* >(tensorflow==1.12.0)*
+```
+module load cudnn/10.0v7.6.2.24
+module load cuda/10.1.105
+```
+just do `conda spider cudnn` or `conda spider cuda` to know what versions are available and install accordingly. Must do it before installing tensorflow. If not, pip uninstall tensorflow-gpu==x.x.x and reinstall   
 
 
 ### Install  libraries
