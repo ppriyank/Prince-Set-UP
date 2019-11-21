@@ -69,19 +69,7 @@ conda activate bert
 ```
 
 
-### Install  libraries
-**(Use pip not conda!!)**
-Conda has some sorts of bug. It installs cuda and cudnn as well, which is already installed on prince and in contradictions to the requirements of tensorflow.
-```
-pip install h5py nltk pyhocon scipy sklearn
-pip install tensorflow-gpu==1.7.0  
-```
-or
-```
-pip install tensorflow-gpu==1.11.0
-```
-
-### Installing Pytorch 
+# Installing Pytorch 
 ```
 conda  env create -f req.yml 
 ```
@@ -142,6 +130,7 @@ Run the above script as
 `squeue -j 4654238`  
 `scancel 4654238`  
 
+# Installing Tensorflow
 ### Requesting GPUs (not recommended):   
 Types of GPUs available can be found here : https://wikis.nyu.edu/display/NYUHPC/Clusters+-+Prince
 ```
@@ -164,6 +153,20 @@ module load cuda/9.0.176
 ```
 module load cudnn/9.0v7.3.0.29 
 module load cuda/9.0.176
+```
+
+
+
+### Install  libraries
+**(Use pip not conda!!)**
+Conda has some sorts of bug. It installs cuda and cudnn as well, which is already installed on prince and in contradictions to the requirements of tensorflow.
+```
+pip install h5py nltk pyhocon scipy sklearn
+pip install tensorflow-gpu==1.7.0  
+```
+or
+```
+pip install tensorflow-gpu==1.11.0
 ```
 
 ### Creating a jupyter notebook on Prince 
