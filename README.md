@@ -30,10 +30,7 @@
 
 * **[Summary](#Summary)**<br>
 
-
-# Installing Tensorflow on Prince   
-Try to follow the sequence of  commands as it is.  Do  not do module load anaconda, doesn't seems to  work for me. 
-
+# Conda related Things 
 ### Installing Conda
 Download `python 3.6` version of the Anaconda for `ubuntu` from here : https://www.anaconda.com/distribution/
 
@@ -67,6 +64,54 @@ conda remove --name env_name --all
 conda create --name bert python=3.5  
 conda activate bert
 ```
+
+
+
+# Installing Tensorflow on Prince   
+Try to follow the sequence of  commands as it is.  Do  not do module load anaconda, doesn't seems to  work for me. 
+
+### Remove any preloaded modules  
+```
+module purge
+```
+
+### Requesting GPUs (not recommended):   
+Types of GPUs available can be found here : https://wikis.nyu.edu/display/NYUHPC/Clusters+-+Prince
+```
+srun -c4 -t5:00:00 --mem=30000 --gres=gpu:p40:1 --pty /bin/bash
+```
+
+### Load  Cuda/Cudnn modules  (strictly follow the order)
+
+*(tensorflow==1.7.0)*  
+```
+module load cudnn/9.0v7.0.5  
+module load cuda/9.0.176   
+```
+*(tensorflow==1.11.0)*
+```
+module load cudnn/9.0v7.3.0.29 
+module load cuda/9.0.176
+```
+* >(tensorflow==1.12.0)*
+```
+module load cudnn/10.0v7.6.2.24
+module load cuda/10.1.105
+```
+just do `conda spider cudnn` or `conda spider cuda` to know what versions are available and install accordingly. Must do it before installing tensorflow. If not, pip uninstall tensorflow-gpu==x.x.x and reinstall   
+
+### Install  libraries
+**(Use pip not conda!!)**
+Conda has some sorts of bug. It installs cuda and cudnn as well, which is already installed on prince and in contradictions to the requirements of tensorflow.
+```
+pip install h5py nltk pyhocon scipy sklearn
+pip install tensorflow-gpu==1.7.0  
+```
+or
+```
+pip install tensorflow-gpu==1.11.0
+```
+
 
 
 # Installing Pytorch 
@@ -130,49 +175,7 @@ Run the above script as
 `squeue -j 4654238`  
 `scancel 4654238`  
 
-# Installing Tensorflow
-### Requesting GPUs (not recommended):   
-Types of GPUs available can be found here : https://wikis.nyu.edu/display/NYUHPC/Clusters+-+Prince
-```
-srun -c4 -t5:00:00 --mem=30000 --gres=gpu:p40:1 --pty /bin/bash
-```
-
-### Remove any preloaded modules  
-```
-module purge
-```
-
-### Load  Cuda/Cudnn modules  (strictly follow the order)
-
-*(tensorflow==1.7.0)*  
-```
-module load cudnn/9.0v7.0.5  
-module load cuda/9.0.176   
-```
-*(tensorflow==1.11.0)*
-```
-module load cudnn/9.0v7.3.0.29 
-module load cuda/9.0.176
-```
-* >(tensorflow==1.12.0)*
-```
-module load cudnn/10.0v7.6.2.24
-module load cuda/10.1.105
-```
-just do `conda spider cudnn` or `conda spider cuda` to know what versions are available and install accordingly. Must do it before installing tensorflow. If not, pip uninstall tensorflow-gpu==x.x.x and reinstall   
-
-
-### Install  libraries
-**(Use pip not conda!!)**
-Conda has some sorts of bug. It installs cuda and cudnn as well, which is already installed on prince and in contradictions to the requirements of tensorflow.
-```
-pip install h5py nltk pyhocon scipy sklearn
-pip install tensorflow-gpu==1.7.0  
-```
-or
-```
-pip install tensorflow-gpu==1.11.0
-```
+# Prince Related Things 
 
 ### Creating a jupyter notebook on Prince 
 ```
