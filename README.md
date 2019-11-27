@@ -1,10 +1,12 @@
-### Table of Contents
-* **[Installing Tensorflow on Prince](#Installing-Tensorflow-on-Prince)**<br>
-  * [Installing Conda](#Installing-Conda)<br>
+### Table of Contents (outdated)
+* **[Installing Conda](#Installing-Conda)**<br>
   * [Delete a conda environment](#Delete-a-conda-environment)<br>
   * [Create environment](#Create-environment)<br>  
+  
+* **[Installing Tensorflow on Prince](#Installing-Tensorflow-on-Prince)**<br>
   * [Install  libraries (Tensorflow)](#Install--libraries)<br>  
-  * [Installing Pytorch](#Installing-Pytorch)<br>  
+
+* **[Installing Pytorch](#Installing-Pytorch)**<br>  
   * [Submitting Jobs (Recommended)](#Submitting-Jobs-Recommended)<br>  
   * [Remove any preloaded modules](#Remove-any-preloaded-modules)<br>  
   * [Requesting GPUs (not recommended)](#Requesting-GPUs-not-recommended)<br>  
