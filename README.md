@@ -7,7 +7,7 @@
   
 * **[Installing Tensorflow on Prince](#Installing-Tensorflow-on-Prince)**<br>
   * [Remove any preloaded modules](#Remove-any-preloaded-modules)<br>  
-  * [Requesting GPUs (not recommended)](#Requesting-GPUs-not-recommended)<br>  
+  * [Requesting GPUs (not recommended for doing work)](#Requesting-GPUs-not-recommended)<br>  
   * [Load  Cuda/Cudnn modules  (strictly follow the order)](#Load--CudaCudnn-modules--strictly-follow-the-order)<br>    
   * [Install  libraries (Tensorflow)](#Install-Tensorflow-libraries)<br>  
 
