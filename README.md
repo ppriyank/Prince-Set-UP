@@ -1,20 +1,24 @@
 ### Table of Contents (outdated)
-* **[Installing Conda](#Installing-Conda)**<br>
+* **[Conda](#Conda-related-Things)**<br>
+  * [Installing Conda](#Installing-Conda)
   * [Delete a conda environment](#Delete-a-conda-environment)<br>
   * [Create environment](#Create-environment)<br>  
   
 * **[Installing Tensorflow on Prince](#Installing-Tensorflow-on-Prince)**<br>
-  * [Install  libraries (Tensorflow)](#Install--libraries)<br>  
-
-* **[Installing Pytorch](#Installing-Pytorch)**<br>  
-  * [Submitting Jobs (Recommended)](#Submitting-Jobs-Recommended)<br>  
   * [Remove any preloaded modules](#Remove-any-preloaded-modules)<br>  
   * [Requesting GPUs (not recommended)](#Requesting-GPUs-not-recommended)<br>  
-  * [Load  Cuda/Cudnn modules  (strictly follow the order)](#Load--CudaCudnn-modules--strictly-follow-the-order)<br>  
+  * [Load  Cuda/Cudnn modules  (strictly follow the order)](#Load--CudaCudnn-modules--strictly-follow-the-order)<br>    
+  * [Install  libraries (Tensorflow)](#Install-Tensorflow-libraries)<br>  
+
+* **[Installing Pytorch](#Installing-Pytorch)**<br>  
+
+* **[Prince](#Prince-Related-Things)**<br>  
+  * [Submitting Jobs (Recommended)](#Submitting-Jobs-Recommended)<br>  
   * [Creating a jupyter notebook on Prince](#Creating-a-jupyter-notebook-on-Prince)<br>    
   * [Creating a jupyter notebook on server (unverified)](#Creating-a-jupyter-notebook-on-server-unverified)<br>  
   * [Working with Jiant (allenNLP)](#Working-with-Jiant-allenNLP)<br>    
-  * [Common Problems](#Common-problems)<br>  
+
+* **[Common Problems](#Common-problems)**<br>  
   
 * **[Hacks](#Hacks)**<br>
   * [Downloading Googe drive link](#Downloading-Googe-drive-link)<br>  
@@ -32,7 +36,7 @@
 
 * **[Summary](#Summary)**<br>
 
-# Conda related Things 
+# Conda related Things
 ### Installing Conda
 Download `python 3.6` version of the Anaconda for `ubuntu` from here : https://www.anaconda.com/distribution/
 
@@ -43,10 +47,15 @@ chmod +777 <downloaded file>
 ./<downloaded file>.sh 
 ```
 
-
 ### What virtual environment you have
 ```
 conda info --envs
+```
+
+### Create environment  
+```
+conda create --name bert python=3.5  
+conda activate bert
 ```
 
 ### Delete a conda environment   
@@ -61,18 +70,10 @@ Conda seems to have a bug, doesn't  delete the local files, will eventually  exh
 conda remove --name env_name --all
 ```
 
-### Create environment  
-```
-conda create --name bert python=3.5  
-conda activate bert
-```
-
-
-
 # Installing Tensorflow on Prince   
 Try to follow the sequence of  commands as it is.  Do  not do module load anaconda, doesn't seems to  work for me. 
 
-### Remove any preloaded modules  
+### Remove any preloaded modules 
 ```
 module purge
 ```
@@ -102,7 +103,7 @@ module load cuda/10.1.105
 ```
 just do `conda spider cudnn` or `conda spider cuda` to know what versions are available and install accordingly. Must do it before installing tensorflow. If not, pip uninstall tensorflow-gpu==x.x.x and reinstall   
 
-### Install  libraries
+### Install Tensorflow libraries
 **(Use pip not conda!!)**
 Conda has some sorts of bug. It installs cuda and cudnn as well, which is already installed on prince and in contradictions to the requirements of tensorflow.
 ```
@@ -113,8 +114,6 @@ or
 ```
 pip install tensorflow-gpu==1.11.0
 ```
-
-
 
 # Installing Pytorch 
 ```
@@ -138,6 +137,7 @@ req.yml :
          - tensorboard
 ```
 
+# Prince Related Things
 ### Submitting Jobs (Recommended)
 Create a file `file_name.s` like  
 time : `hts:mins:seconds`  
@@ -177,7 +177,7 @@ Run the above script as
 `squeue -j 4654238`  
 `scancel 4654238`  
 
-# Prince Related Things 
+
 
 ### Creating a jupyter notebook on Prince 
 ```
