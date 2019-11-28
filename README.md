@@ -1,8 +1,9 @@
-### Table of Contents (outdated)
+### Table of Contents 
 * **[Conda](#Conda-related-Things)**<br>
   * [Installing Conda](#Installing-Conda)
-  * [Delete a conda environment](#Delete-a-conda-environment)<br>
   * [Create environment](#Create-environment)<br>  
+  * [Delete a conda environment](#Delete-a-conda-environment)<br>
+
   
 * **[Installing Tensorflow on Prince](#Installing-Tensorflow-on-Prince)**<br>
   * [Remove any preloaded modules](#Remove-any-preloaded-modules)<br>  
