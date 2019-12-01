@@ -128,14 +128,12 @@ req.yml :
      - pytorch
  dependencies:
      - python=3.6
-     - pytorch=1.0.0
-     - torchvision=0.2.1
-     - numpy=1.14.5
-     - scikit-learn=0.19.1
+     - pytorch
+     - torchvision
+     - numpy
+     - scikit-learn
      - h5py
      - scipy
-     - pip:
-         - tensorboard
 ```
 
 # Prince Related Things
