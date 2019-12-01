@@ -18,6 +18,8 @@
   * [Creating a jupyter notebook on Prince](#Creating-a-jupyter-notebook-on-Prince)<br>    
   * [Creating a jupyter notebook on server (unverified)](#Creating-a-jupyter-notebook-on-server-unverified)<br>  
   * [Working with Jiant (allenNLP)](#Working-with-Jiant-allenNLP)<br>    
+  * [Check job history](#Check-job-history)<br>  
+  * [Retrieve sbatch script for the running job id](#Retrieve-sbatch-script-for-the-running-job-id)<br>  
 
 * **[Common Problems](#Common-problems)**<br>  
   
@@ -30,8 +32,6 @@
   * [Mount w/o Tunnel](#Mount-wo-tunnel)<br>  
   * [Using tmux](#Using-tmux)<br>    
   * [Pdb multiple Line code](#Pdb-multiple-Line-code)<br>
-  * [Check job history](#Check-job-history)<br>  
-  * [Retrieve sbatch script for the running job id](#Retrieve-sbatch-script-for-the-running-job-id)<br>  
 
 
 
@@ -265,12 +265,22 @@ pip install allennlp
 `pip install` <--> `conda install -c conda-forge` 
 **Don't load python module!!!**
 
+
+### Check job history
+`sacct --format=User,JobID,partition,state,time,start,end,elapsed,nodelist -j 4821655`  
+
+### Retrieve sbatch script for the running job id
+`scontrol write batch_script 5553599` or `scontrol write batch_script 5553599 -`
+
+
+
 ### Common problems
 
 * Conda install reverts the changes of loading cuda/cudnn  
 use : ```conda uninstall tensorflow-gpu cudatoolkit cudnn ```
 * Tensorflow was compiled with diffent version of  cudnn  and currently is a different version is loaded. Just load the correct/earlier version of cudnn by which *tensorflow-gpu* was  installed
 * Tensorflow is not compatible to use gpu. cuda/cudnn used during installation doesn't match with the tensorflow binary from which it was created.  ```pip uninstall tensorflow-gpu``` or  possibly delete the  whole  environment and follow the  above procedure.
+
 
 # Hacks
 ### Downloading Googe drive link
@@ -346,13 +356,6 @@ tmux a -t session_name
 control + b -> # (sliding between windows) or control + b -> ' -> # (window >10) 
 ```
 Set mouse scrolling on by : (Mac control + b -> shift + : ->`setw -g mouse on ` or `setw -g mode-mouse on` )
-
-### Check job history
-`sacct --format=User,JobID,partition,state,time,start,end,elapsed,nodelist -j 4821655`  
-
-### Retrieve sbatch script for the running job id
-`scontrol write batch_script 5553599` or `scontrol write batch_script 5553599 -`
-
 
 
 ### Pdb multiple Line code 
