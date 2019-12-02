@@ -20,10 +20,12 @@
   * [Working with Jiant (allenNLP)](#Working-with-Jiant-allenNLP)<br>    
   * [Check job history](#Check-job-history)<br>  
   * [Retrieve sbatch script for the running job id](#Retrieve-sbatch-script-for-the-running-job-id)<br>  
+  * [List of CILVR GPUS](#List-of-CILVR-GPUS)<br>    
 
 * **[Common Problems](#Common-problems)**<br>  
   
 * **[Hacks](#Hacks)**<br>
+  * [Google Collab ](#Google-Collab)<br>  
   * [Downloading Googe drive link](#Downloading-Googe-drive-link)<br>  
   * [Setting Keys](#Setting-up-ssh-keys)<br> 
   * [Normal SSH](#Normal-SSH)<br> 
@@ -272,6 +274,8 @@ pip install allennlp
 ### Retrieve sbatch script for the running job id
 `scontrol write batch_script 5553599` or `scontrol write batch_script 5553599 -`
 
+## List of CILVR GPUS
+`1080ti, titanxp, titanblack, k40, k20, k20x, m2090, titanv`
 
 
 ### Common problems
@@ -368,7 +372,6 @@ Set mouse scrolling on by : (Mac control + b -> shift + : ->`setw -g mouse on ` 
 
 ### Pdb multiple Line code 
 `from IPython import embed; embed()`
-
 
 
 # Summary
