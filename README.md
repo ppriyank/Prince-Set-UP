@@ -283,6 +283,14 @@ use : ```conda uninstall tensorflow-gpu cudatoolkit cudnn ```
 
 
 # Hacks
+### Google Collab 
+```
+from google.colab import drive
+drive.mount('/gdrive')
+%cd /gdrive/My\ Drive/...
+```
+
+
 ### Downloading Googe drive link
 (ref: https://stackoverflow.com/questions/25010369/wget-curl-large-file-from-google-drive)
 ```
