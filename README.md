@@ -67,6 +67,7 @@ Clean the  environment :
 ```
 conda deactivate 
 conda clean -i -l -t -p -s   
+conda build purge-all
 ```
 Conda seems to have a bug, doesn't  delete the local files, will eventually  exhaust all the storage space
 ```
@@ -263,7 +264,7 @@ module load gcc/9.1.0
 conda install -c conda-forge regex
 pip install allennlp
 ```
-
+`pip install --user` might be better to use    
 `pip install` <--> `conda install -c conda-forge` 
 **Don't load python module!!!**
 
