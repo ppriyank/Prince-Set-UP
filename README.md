@@ -278,6 +278,14 @@ pip install allennlp
 ## List of CILVR GPUS
 `1080ti, titanxp, titanblack, k40, k20, k20x, m2090, titanv`
 
+## CILVR Packages
+
+```
+export PATH="/misc/vlgscratch4/LakeGroup/pathak/anaconda3/bin:$PATH"
+conda activate pathak 
+conda install -n pathak nb_conda_kernels
+```
+
 
 ### Common problems
 
