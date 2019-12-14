@@ -87,6 +87,7 @@ Types of GPUs available can be found here : https://wikis.nyu.edu/display/NYUHPC
 ```
 srun -c4 -t5:00:00 --mem=30000 --gres=gpu:p40:1 --pty /bin/bash
 ```
+requesting specific gpu: `--nodelist=gpu-90`    
 
 ### Load  Cuda/Cudnn modules  (strictly follow the order)
 
