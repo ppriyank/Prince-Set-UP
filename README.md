@@ -256,6 +256,11 @@ c.NotebookApp.ip = '0.0.0.0'
 c.NotebookApp.allow_origin = '*'
 ```
 
+```
+jupyter notebook --no-browser --port=XXXX(some port)
+ssh -N -f -L localhost:YYYY:localhost:XXXX user@ip address
+```
+
 ### Working with Jiant (allenNLP)
 
 ```
