@@ -189,6 +189,8 @@ Run the above script as
 
 
 ### Creating a jupyter notebook on Prince 
+In case below steps arent working : use this link https://gist.github.com/go-inoue/1203305f83974b5fbbcfd90cd707418d
+
 ```
 conda install -n <conda env name> nb_conda_kernels
 python -m ipykernel install --user --name build_central --display-name <conda env name>
