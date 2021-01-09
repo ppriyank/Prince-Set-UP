@@ -378,6 +378,12 @@ ssh -f <user_name>@<tunnel server> -L 2222:<target server>:22 -N
 sshfs -p 2222 <user_name>@127.0.0.1:/desired/path/ local/path/
 ```
 
+One single command for the above shall look something like this : 
+```
+alias storage='ssh -f pp1953@gw.hpc.nyu.edu -L 5555:prince1.hpc.nyu.edu:22 -N; sshfs -p 5555 pp1953@127.0.0.1:/home/pp1953/code ~/NYU/project'
+alias prince='ssh -p 5555 pp1953@127.0.0.1'
+```
+
 Unmounting process remains the same
 
 `umount -f  ~/NYU/temp/`
