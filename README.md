@@ -1,6 +1,8 @@
 # The following shall hold true for Greene Cluster
 
 ## NOTE NYU HAS MOVED TO SINGULARITY (please refer to https://github.com/ppriyank/NYU-Singularity, for its setup
+## p40s and other GPU dont exist anymore, only v100 and rtx8000
+
 
 ### Table of Contents 
 * **[Conda](#Conda-related-Things)**<br>
