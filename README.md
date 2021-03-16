@@ -407,12 +407,16 @@ Unmounting process remains the same
 
 ### Using tmux
 For god's sake use tmux
+Do not OPEN mutiple tmux sessions on mutiple login nodes, that just bad practice. I have all my tmux windows running on log-3, so whatever login node you enter, just do `ssh log-3` and then launch tmux session 
+
 ```
 tmux new -s session_name
 tmux a -t session_name
 control + b -> # (sliding between windows) or control + b -> ' -> # (window >10) 
 ```
 Set mouse scrolling on by : (Mac control + b -> shift + : ->`setw -g mouse on ` or `setw -g mode-mouse on` )
+
+
 
 
 ### Pdb multiple Line code 
