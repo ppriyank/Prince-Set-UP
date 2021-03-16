@@ -1,5 +1,8 @@
 # The following shall hold true for Greene Cluster
 
+# ** NOTE NYU HAS MOVED TO SINGULARITY ** 
+# ** PLEASE REFER https://github.com/ppriyank/NYU-Singularity FOR THE DOUBTS RELATED TO SINGULARITY *** 
+
 ### Table of Contents 
 * **[Conda](#Conda-related-Things)**<br>
   * [Installing Conda](#Installing-Conda)
