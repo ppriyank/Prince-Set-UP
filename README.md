@@ -1,7 +1,6 @@
 # The following shall hold true for Greene Cluster
 
-# ** NOTE NYU HAS MOVED TO SINGULARITY ** 
-# ** PLEASE REFER https://github.com/ppriyank/NYU-Singularity FOR THE DOUBTS RELATED TO SINGULARITY *** 
+## NOTE NYU HAS MOVED TO SINGULARITY (please refer to https://github.com/ppriyank/NYU-Singularity, for its setup
 
 ### Table of Contents 
 * **[Conda](#Conda-related-Things)**<br>
@@ -388,6 +387,16 @@ One single command for the above shall look something like this :
 alias storage='ssh -f pp1953@gw.hpc.nyu.edu -L 5555:prince1.hpc.nyu.edu:22 -N; sshfs -p 5555 pp1953@127.0.0.1:/home/pp1953/code ~/NYU/project'
 alias prince='ssh -p 5555 pp1953@127.0.0.1'
 ```
+
+In case mount is throwing error 
+`mount_osxfuse: /Users/ppriyank/project/: Input/output error`
+Then do the following : 
+```
+pgrep -lf sshfs
+kill -9 <pid of the process corresponding to the mount /Users/ppriyank/project/>
+sudo umount -f /Users/ppriyank/project/
+```
+Then proceed with ususal mount again 
 
 Unmounting process remains the same
 
