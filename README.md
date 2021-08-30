@@ -422,6 +422,13 @@ Set mouse scrolling on by : (Mac control + b -> shift + : ->`setw -g mouse on ` 
 ### Pdb multiple Line code 
 `from IPython import embed; embed()`
 
+### Killing mounted ports (refreshing sshfs)
+```
+pgrep -lf sshfs
+kill -9 xyz
+sudo umount -f /Users/ppriyank/NYU/project2
+```
+
 
 # Summary
 ```
