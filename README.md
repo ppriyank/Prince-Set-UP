@@ -429,6 +429,11 @@ kill -9 xyz
 sudo umount -f /Users/ppriyank/NYU/project2
 ```
 
+### Simple hack for running jupyter notebook on servers
+
+```
+https://docs.anaconda.com/anaconda/user-guide/tasks/remote-jupyter-notebook/
+```
 
 # Summary
 ```
