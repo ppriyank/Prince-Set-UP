@@ -447,3 +447,24 @@ module load cuda/9.0.176
 conda activate bert
 ```
 
+Quick setup 
+```
+sh /mnt/data/Miniconda3-latest-Linux-x86_64.sh 
+conda create --name pathak python=3.8 ; conda activate pathak ; pip install timm torchvision torch numpy PyYAML yacs termcolor ;
+
+
+vim .bash_profile
+source /home/priyank/miniconda3/etc/profile.d/conda.sh
+conda activate pathak 
+alias session="tmux new -s pathak; tmux a -t pathak"
+
+vim ~/.bashrc
+source ~/.bash_profile
+
+source  ~/.bashrc
+```
+
+
+
+
+
